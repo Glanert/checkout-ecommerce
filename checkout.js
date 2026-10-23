@@ -15,7 +15,16 @@ function contarItens(itens) {
 }
 
 function aplicarCupom(subtotal, codigo) {
-
+    if (codigo === "DESC10") {
+        subtotal = subtotal * 0.90;
+    } else if (codigo === "DESC20") {
+        subtotal = subtotal * 0.80;
+    } else if (codigo === "FRETEGRATIS"){
+        subtotal = subtotal - 15;
+    } else {
+        subtotal = subtotal;
+    }
+    return subtotal;
 }
 
 function finalizarCompra(itens, codigoCupom) {
